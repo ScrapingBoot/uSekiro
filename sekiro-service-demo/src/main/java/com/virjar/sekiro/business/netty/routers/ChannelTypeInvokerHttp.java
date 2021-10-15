@@ -15,6 +15,7 @@ import com.virjar.sekiro.business.netty.http.Multimap;
 import com.virjar.sekiro.business.netty.routers.client.NettyClient;
 import com.virjar.sekiro.business.netty.routers.client.NettySekiroGroup;
 import com.virjar.sekiro.business.netty.util.CommonRes;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -124,7 +125,7 @@ public class ChannelTypeInvokerHttp extends SimpleChannelInboundHandler<FullHttp
         if (StringUtils.isBlank(ip)) {
             ip = ((InetSocketAddress) channelHandlerContext.channel().localAddress()).getHostString();
         }
-        byte[] bytes = (ip + Bootstrap.getListenPort()).getBytes(StandardCharsets.UTF_8);
+        byte[] bytes = (ip + ":" + Bootstrap.getListenPort()).getBytes(StandardCharsets.UTF_8);
         DefaultFullHttpResponse httpResponse = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, Unpooled.wrappedBuffer(bytes));
         httpResponse.headers().set("Content-Type", "text/plain;charset=utf8;");
         httpResponse.headers().set(CONTENT_LENGTH, httpResponse.content().readableBytes());
