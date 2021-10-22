@@ -54,7 +54,7 @@ public class ChannelTypeInvokerHttp extends SimpleChannelInboundHandler<FullHttp
         }
         method = request.getMethod();
         String urlPath = uri.getPath();
-        query = uri.getQuery();
+        query = uri.getRawQuery();
 
         this.channelHandlerContext = channelHandlerContext;
         this.request = request;
