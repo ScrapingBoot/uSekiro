@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ExceptionCaughtHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        log.warn(this.getClass().getSimpleName() + ": " + cause.getMessage());
+        log.warn("exception", cause);
         ctx.close();
     }
 
