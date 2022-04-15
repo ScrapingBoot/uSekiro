@@ -1,7 +1,7 @@
 # sekiro
 
 ## 交流群
-加微信：（virjar1）拉入微信交流群
+加微信：（virjar1）,**并且备注来自项目（sekiro）**。拉入微信交流群
 
 ## 文档入口
 [唯一官方文档](https://sekiro.virjar.com/sekiro-doc/index.html)
