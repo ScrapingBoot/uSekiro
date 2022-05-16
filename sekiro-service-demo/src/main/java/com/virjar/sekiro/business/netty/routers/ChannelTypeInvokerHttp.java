@@ -75,20 +75,20 @@ public class ChannelTypeInvokerHttp extends SimpleChannelInboundHandler<FullHttp
         }
 
         JSONObject requestJson = buildRequestJson(request);
-        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/business-demo/invoke")) {
+        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/invoke")) {
             handleSekiroInvoke(requestJson, channelHandlerContext, request);
             return;
         }
-        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/business-demo/groupList")) {
+        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/groupList")) {
             handleGroupList(channelHandlerContext.channel());
             return;
         }
-        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/business-demo/clientQueue")) {
+        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/clientQueue")) {
             handleClientQueue(requestJson);
             return;
         }
 
-        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/business-demo/mock-allocate")
+        if (StringUtils.equalsAnyIgnoreCase(urlPath, "/mock-allocate")
                 || StringUtils.equalsAnyIgnoreCase(urlPath, "/sekiro-api/sekiro-server/allocate")
         ) {
             handleMockAllocate(requestJson);
